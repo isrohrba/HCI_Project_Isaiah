@@ -1,0 +1,20 @@
+Project works as we discussed previously with the index.php being the home file, found in the adress: 
+'localhost/FamilyManager/View/account.php'
+
+The register page is glitchy, but after 1 or 2 attempts will take the data (if viable) and send u to a 
+confirmation page. If you confirm the new account, you are taken to a generic account page.
+A new account is not yet created (couldnt figure that much out).
+
+When trying to login, simply push the login button, since there are no accounts logging in takes you 
+to a generic account page.
+
+In the account page, all members are displayed firsthand and below the families. My loop was glitching when
+I tried to display people within the family (improper nesting on my part I think). 
+
+Clicking the edit button will change the information for people into textboxes but the save button does not 
+work to apply any changes yet made.
+
+When clicking the add button, you are redirected to the editPerson.php page where you can create a new person. 
+Upon clicking save, a new person is saved and added to the database permanently.
+
+Delete is also still not working.
