@@ -28,7 +28,7 @@ require_once '../Control/controler.php';
             </ul>
         </nav>
 
-        <h1 class="signin">Families</h1>
+        <h1 class="signin">Add Person</h1>
 
         <form class="test" method="post" action="account.php">
             <div id="form-group">
@@ -38,11 +38,11 @@ require_once '../Control/controler.php';
                 <br>
                 Last Name: <input type="text" name="lName">
                 <br>
-                Cell Number: <input type="text" name="phone">
+                Cell Number: <input type="tel" name="phone">
                 <br>
                 Relationship: <input type="text" name="relationship">
                 <br>
-                <input type="submit" value="Save">
+                <input type="submit" name="savePerson" value="Save">
             </div>
         </form>
 

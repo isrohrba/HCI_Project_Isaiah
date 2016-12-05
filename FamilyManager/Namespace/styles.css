@@ -62,7 +62,7 @@ body {
     margin: 5% 20% 5% 20%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=tel] {
     padding: 6px 10px;
     box-sizing: border-box;
     border: 3px solid lightgray;
@@ -72,7 +72,7 @@ input[type=text], input[type=password] {
     outline: none;
     font-family: inherit;
 }
-input[type=text]:focus, input[type=password]:focus{
+input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus{
     border: 3px solid #09587a;
 }
 input[type=password] {
@@ -146,7 +146,7 @@ article {
 }
 table, th, td, caption {
     text-align: center;
-    width: 70%;
+    width: 80%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-weight: bold;
@@ -154,6 +154,11 @@ table, th, td, caption {
     color: #09587a;
     border: 2px solid #09587a;
     padding: 15px;
+    margin: 0% 10% 0% 10%;
+}
+#top {
+    background-color: #09587a;
+    color: white;
 }
 h1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

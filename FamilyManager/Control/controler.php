@@ -6,7 +6,10 @@ require_once '../Model/User.php';
 require_once '../Model/dictionary.php';
 
 //test register data
-$saveAction = filter_input(INPUT_POST, 'submit');
+$saveAction = filter_input(INPUT_POST, 'savePerson');
+$deleteAction = filter_input(INPUT_POST, 'select');
+
+
 
 
 /* $dsn = 'msql:host=localhost;dbname=families_db';
@@ -17,9 +20,6 @@ $saveAction = filter_input(INPUT_POST, 'submit');
 $fName_fail = $sName_fail = $lName_fail = $email_fail = $password_fail = "";
 
 //register page data
-$first_name = filter_input(INPUT_POST, 'fName');
-$second_name = filter_input(INPUT_POST, 'sName');
-$last_name = filter_input(INPUT_POST, 'lName');
 $email = filter_input(INPUT_POST, 'email');
 $password = filter_input(INPUT_POST, 'password');
 $address = filter_input(INPUT_POST, 'address');
@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if (file_exists("../Namespace/people.txt")) {
     $people_file = fopen("../Namespace/people.txt", "r+");
     $people = file("../Namespace/people.txt", FILE_IGNORE_NEW_LINES);
-    print_r($people);
+    fclose($people_file);
 } else {
     $people_file = fopen("../Namespace/people.txt", "x+");
 }
@@ -117,19 +117,33 @@ if (file_exists("../Namespace/accounts.txt")) {
 } else {
     $accounts_file = fopen("../Namespace/accounts.txt", "x+");
 }
-
+if (file_exists("../Namespace/family.txt")) {
+    $family_file = fopen("../Namespace/family.txt", "r+");
+    $family = file("../Namespace/family.txt", FILE_IGNORE_NEW_LINES);
+    fclose($family_file);
+} else {
+    $family_file = fopen("../Namespace/family.txt", "x+");
+}
 //check for users.txt and or create users.txt
 if (file_exists("../Namespace/users.txt")) {
     $users_file = fopen("../Namespace/users.txt", "r+");
     $users = file("../Namespace/users.txt", FILE_IGNORE_NEW_LINES);
-    print_r($users);
+    fclose($users_file);
 } else {
     $users_file = fopen("../Namespace/users.txt", "x+");
 }
 
 if ($saveAction == "Save") {
-    $addString =  "\n" + (count($people) + 1) + ',' + $first_name + ',' + $second_name + ',' + $last_name + ',' + $phone + ',' + $relationship;
-    $file = fopen("../Namespace/people.txt", "a") or die("WHY");
-    file_put_contents($file, $addString);
+    $first_name = filter_input(INPUT_POST, 'fName');
+    $second_name = filter_input(INPUT_POST, 'sName');
+    $last_name = filter_input(INPUT_POST, 'lName');
+    $addString = (count($people) + 1).','.$first_name.','.$second_name.','. $last_name.','.$phone.','.$relationship;
+    $file = fopen("../Namespace/people.txt", "a+") or die("WHY");
+    file_put_contents("../Namespace/people.txt", "\n".$addString, FILE_APPEND);
+    fclose($file);
+    fopen("../Namespace/people.txt", "r+");
+    $people = file("../Namespace/people.txt", FILE_IGNORE_NEW_LINES);
+}
+if (!empty($deleteAction)) {
     
 }

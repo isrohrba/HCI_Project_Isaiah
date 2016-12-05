@@ -5,10 +5,12 @@
         <group>
             <file>file:/C:/xampp/htdocs/FamilyManager/Model/Person.php</file>
             <file>file:/C:/xampp/htdocs/FamilyManager/Control/script.js</file>
+            <file>file:/C:/xampp/htdocs/FamilyManager/View/editPerson.php</file>
+            <file>file:/C:/xampp/htdocs/FamilyManager/Namespace/family.txt</file>
             <file>file:/C:/xampp/htdocs/FamilyManager/View/account.php</file>
             <file>file:/C:/xampp/htdocs/FamilyManager/View/confirmAccount.php</file>
             <file>file:/C:/xampp/htdocs/FamilyManager/Control/controler.php</file>
-            <file>file:/C:/xampp/htdocs/FamilyManager/View/index.php</file>
+            <file>file:/C:/xampp/htdocs/FamilyManager/Namespace/people.txt</file>
             <file>file:/C:/xampp/htdocs/FamilyManager/Namespace/styles.css</file>
             <file>file:/C:/xampp/htdocs/FamilyManager/Model/Family.php</file>
             <file>file:/C:/xampp/htdocs/FamilyManager/View/register.php</file>
